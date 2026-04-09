@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday 🎂</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.scene { margin-top: 60px; perspective: 1000px;}
+.cake3d {
+  width:200px; height:200px; margin:auto;
+  transform-style: preserve-3d;
+  animation: spin 6s linear infinite;
+}
+.cake3d div{
+  position:absolute;
+  width:200px; height:200px;
+  background:pink; border-radius:20px;
+}
+.top{transform:rotateX(90deg) translateZ(100px);}
+.bottom{transform:rotateX(-90deg) translateZ(100px);}
+.front{transform:translateZ(100px);}
+.back{transform:rotateY(180deg) translateZ(100px);}
+.left{transform:rotateY(-90deg) translateZ(100px);}
+.right{transform:rotateY(90deg) translateZ(100px);}
+
+@keyframes spin{
+  from{transform:rotateX(0) rotateY(0);}
+  to{transform:rotateX(360deg) rotateY(360deg);}
+}
+
+.balloons span{
+  display:inline-block;
+  animation: float 4s infinite ease-in-out;
+  font-size:40px;
+}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-40px);}
+  100%{transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<h1 class="glow">Happy Birthday Arooj 👑💖</h1>
+
+<div class="scene">
+  <div class="cake3d">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</div>
+
+<div class="balloons">
+  <span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span>
+</div>
+
+<h2>Enjoy your day 💕</h2>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+setInterval(()=>{confetti({particleCount:80,spread:70});},2000);
+</script>
+
+</body>
+</html>
